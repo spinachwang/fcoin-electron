@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fcoin</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="../css/fcoin.css" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="container" >
+  		<div class="row first-row">
+	    		<div class="col-sm-6">
+	    			<button class="btn btn-default" type="button" disabled="disabled">市场API设置</button>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<table class="table table-bordered">
+					<tr>
+						<td style="line-height: 50px;" rowspan="2">本次交易已成交订单: <span>168</span></td>
+						<td>今日流量: <span>123</span></td>
+						<td>剩余流量: <span>123</span></td>
+					</tr>
+					<tr>
+						<td>昨日流量: <span>123</span></td>
+						<td>已使用流量: <span>123</span></td>
+					</tr>
+				</table>
+	    		</div>
+	    </div>
+	    
+	    <div class="row">
+	    		<div class="col-sm-6">
+	    			<p>货币选择</p>
+	    			<div class="select-symbol-info line-spacing">
+	    				<div class="symbol">
+	    					<span>交易对: </span>
+	    					<select>
+	    						<!-- js set option-->
+	    					</select>
+	    				</div>
+	    				<table class="table table-bordered info"> 
+	    					<tr>
+	    						<th>币种</th>
+	    						<th>可用资产</th>
+	    						<th>冻结资产</th>
+	    					</tr>
+	    				</table>
+	    			</div>
+	    			<p>自动交易</p>
+	    			<div class="auto-trade line-spacing">
+	    				<div style="width: 30%; position: relative; top: -15px;">	
+	    					<p><button class="btn btn-default" type="button">开始</button></p>
+	    					<p><button class="btn btn-default" type="button" >停止</button></p>
+	    				</div>
+	    				<div style="width: 50%;">
+	    					<p><span>下单频率</span><input style="width: 50px;" type="number" value="5" id="order-rate"/><span>秒一次</span></p>
+	    					<p><span>每次下单数量</span><input style="width: 50px;" type="number" value="1" id="order-cnt"/></p>
+	    					<p><span>超时</span><input style="width: 50px;" type="number" value="2" id="order-time-out"/><span>分钟自动撤单(0为不撤单)</span></p>
+	    				</div style="width: 20%;">
+	    				<div class="auto-trade-pattern" style="position: relative; top: -10px;">
+	    					<p><input type="radio" name="pattern" checked=""/><span>平买平卖</span></p>
+	    					<p><input type="radio" name="pattern"/><span>买高卖低</span></p>
+	    					<p><input type="radio" name="pattern"/><span>卖高买低</span></p>
+	    				</div>
+	    			</div>
+	    			<p>手动交易</p>
+	    			<div class="manual-trade line-spacing">
+	    				<div style="width: 45%;">
+	    					<p><span>买单价格: </span><input type="number"/></p>
+	    					<p><span>下单数量: </span><input type="number"/></p>
+	    					<p><button class="btn btn-default" type="button">下买单</button></p>
+	    				</div>
+	    				<div style="width: 45%;">
+	    					<p><span>卖单价格: </span><input type="number"/></p>
+	    					<p><span>下单数量: </span><input type="number"/></p>
+	    					<p><button class="btn btn-default" type="button">下卖单</button></p>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-6">
+	    			<p>订单信息</p>
+	    			<div class="order-info" style="overflow-y: scroll; height: 300px; border: 1px solid black; margin-bottom: 20px;">
+	    				<table class="table table-bordered">
+	    					<tr>
+	    						<th>订单号</th>
+	    						<th>价格</th>
+	    						<th>数量</th>
+	    						<th>类型</th>
+	    						<th>下单时间</th>
+	    						<th>状态</th>
+	    					</tr>
+	    					<tr>
+	    						<td>111111</td>
+	    						<td>1161</td>
+	    						<td>1</td>
+	    						<td>buy</td>
+	    						<td>2016/6/30 15:00:00</td>
+	    						<td>完全成交</td>
+	    					</tr>
+	    				</table>
+	    			</div>
+	    			
+	    			<p>市场价格</p>
+	    			<div class="market-price line-spacing">
+	    				<div style="width: 47%; overflow-y: scroll; height: 360px;" >
+	    					<table class="table table-bordered buy">
+							<tr>
+								<th>买单</th>
+								<th>价格</th>
+								<th>数量</th>
+							</tr>
+							<tr>
+								<td>买1</td>
+								<td>6347.07</td>
+								<td>0.010832</td>
+							</tr>
+	
+							
+						</table>
+	    				</div>
+	    				<div style="width: 47%; overflow-y: scroll; height: 360px;">
+	    					<table class="table table-bordered sell">
+							<tr>
+								<th>卖单</th>
+								<th>价格</th>
+								<th>数量</th>
+							</tr>
+							<tr>
+								<td>卖1</td>
+								<td>6347.07</td>
+								<td>0.010832</td>
+							</tr>
+						</table>
+	    				</div>
+	    			</div>
+	    		</div>
+	    </div>
+  	</div>
+
+    <script>
+	  window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');
+	  require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
+	  require('../js/fcoin.js');
+    </script>
+  </body>

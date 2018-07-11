@@ -1,0 +1,40 @@
+HTML {
+    font-size: 13px
+}
+
+.first-row {
+	margin-top: 20px;
+}
+
+.select-symbol-info {
+	border: 1px solid black;
+	
+}
+
+.select-symbol-info .info {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.auto-trade div {
+	display: inline-block;
+}
+.manual-trade div {
+	display: inline-block;
+}
+.market-price div {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.line-spacing {
+	border: 1px solid black;
+	margin-bottom: 20px;
+	padding-top: 15px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	padding-right: 20px;
+}
+
+.order-info td {
+	height: 30px;
+}
